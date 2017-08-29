@@ -16,7 +16,6 @@ def formatme(nfile):
 	for line in file:
 		fulltext += line
 
-	# sents = re.split(r' *[\.*\?*!*]\s', fulltext)
 	for sent in re.split(r' *[\n{2}\.\?!;][\.\?!]*', fulltext):
 		print(' <- + ->')
 		print(sent)
@@ -30,44 +29,7 @@ def formatme(nfile):
 			result += tmp.strip() + '\n' 
 		else:
 			continue
-	# for i in range(0, len(sent)):
-	# 	print(' <:>')
-		# print(pice[i])
-		
 
-	# for line in file:
-	# 	tmp = line.split('\n')
-	# 	print(' <:>')
-	# 	print(line)
-	# 	# tmp = line
-	# 	for text in tmp:
-	# 		if text == '':
-	# 			continue
-	# 		if text == '\n':
-	# 			continue
-
-	# 		# pice = re.split(r' *[\.\?!][\'"\)\]]*\s', text)
-	# 		pice = re.split(r' *[\.\?!...]', text)
-
-	# 		tmp = ''
-	# 		tmp2 =''
-	# 		# for text in split:
-	# 		for i in range(0, len(pice)):
-	# 			text = pice[i]
-	# 			print(' <+>')
-	# 			print(text)
-	# 			if text == '':
-	# 				continue
-	# 			if text == '\n':
-	# 				continue
-	# 			word = text.split(' ')[-1]pice = re.split(r' *[\.\?!][\'"\)\]]*\s', text)
-	# 			first = pice[0]
-
-	# 			if len(tmp) > 0:
-	# 				text = tmp + text
-	# 				tmp = ''
-				
-	# 			result += text + "\n"
 	file.close();
 	file = open(os.path.join(res_dir, nfile), 'w+')
 	file.write(result)
